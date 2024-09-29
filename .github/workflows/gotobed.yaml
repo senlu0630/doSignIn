@@ -9,7 +9,7 @@ name: gotobed
 
 on:
   schedule: # 每晚上十点执行 时差为 +8
-    - cron: '17 8 * * *'
+    - cron: '20 16 * * *'
 
 
 jobs:
