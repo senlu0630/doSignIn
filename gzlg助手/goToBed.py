@@ -122,8 +122,10 @@ def login(session, username, password):
         send_QQ_email_plain(email_address, result)
         sys.exit(1)
     else:
-        return response.json()['ticket']
-
+        try:
+            ticket = response.json()['ticket']
+        except KeyError:
+            print("未找到'ticket'键，响应内容：", response.json())
 
 def UpdateCookie(session, ticket):
     params = {'ticket': ticket}
